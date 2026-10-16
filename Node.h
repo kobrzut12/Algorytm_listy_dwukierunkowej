@@ -13,7 +13,7 @@
  * Klasa przechowuje wartość całkowitą oraz wskaźniki na poprzedni i następny element listy.
  */
 class Node {
-    private:
+    public:
     int data; ///< Wartość przechowywana w węźle.
     Node* next; ///< Wartość następna w węźle.
     Node* preview; ///<Wartość poprzednia w węźle.
