@@ -81,4 +81,22 @@ public:
         }
         cout<<endl;
     }
+
+    /**
+     * @brief Metoda służy do usuwania węzła z przodu listy dwukierunkowej.
+     */
+    void deleteFront() {
+         if (head==nullptr) {
+             return;
+         }
+         Node* Delete=head;
+         head=head->next;
+         if (head!=nullptr) {
+             head->preview=nullptr;
+         }
+         else {
+             tail=nullptr;
+         }
+         delete Delete;
+     }
 };
