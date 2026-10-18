@@ -2,9 +2,7 @@
 // Created by Kamil Obrzut on 16.10.2026.
 //
 #include <iostream>
-#include <cassert>
-#include "Node.h"
-#include "List.h"
+#include"List.h"
 using namespace std;
 /**
  * @brief Funkcja główna testująca działanie węzłów i listy.
