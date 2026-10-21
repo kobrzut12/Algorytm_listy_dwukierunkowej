@@ -1,19 +1,16 @@
 #pragma once
-
-#include <iostream>
 #include "Node.h"
-using namespace std;
 
 /**
  *@file List.h
- * @brief Implementacja listy dwukierunkowej.
+ * @brief Deklaracja klasy listy dwukierunkowej.
  */
 
 /**
  * @class List
  * @brief Klasa zarządza listą.
  *
- *  Elementy tworzony dynamicznie oraz przechowuje wskaźniki na pierwszy i ostatni węzeł.
+ *  Elementy tworzone dynamicznie oraz przechowuje wskaźniki na pierwszy i ostatni węzeł.
  */
 
 class List {
@@ -27,7 +24,7 @@ public:
      */
     ~List();
 
-    ///Zapobiega możliwości kopiowania węzłów.
+    ///Zapobiega możliwości kopiowania całej listy.
     List(const List&)=delete;
     ///Blokuje przypisanie kopiujące węzły.
     List& operator=(const List&)=delete;
@@ -63,4 +60,32 @@ public:
      * @param index Indeks elementu do usunięcia, liczony od zera.
      */
     void deleteAt(int index);
+
+    /**
+     *@brief Metoda dodaje nowy węzeł pod wskazanym indeksem..
+     *@param index wskazuje indeks.
+     *@param value wskazuje wartość.
+     */
+    void pushAt(int index, int value);
+
+    /**
+     *@brief Metoda służy do wyświetlania listy w odwrotnej kolejności.
+     */
+    void printReverse()const;
+
+    /**
+     *@brief Metoda służy do wyświetlania następnego elementu listy.
+    *@param index wskazuje indeks.
+    */
+
+    void printNext(int index)const;
+    /**
+         *@brief Metoda służy do wyświetlania poprzedniego elementu listy.
+        *@param index wskazuje indeks.
+        */
+    void printBack(int index)const;
+/**
+ *@brief Metoda służy do czyszczenia całej listy.
+ */
+    void clear();
 };

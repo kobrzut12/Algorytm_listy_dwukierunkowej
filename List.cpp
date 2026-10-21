@@ -12,12 +12,7 @@ List::List() : head(nullptr), tail(nullptr) {}
 
 /// Destruktor.
 List::~List() {
-    Node* current = head;
-    while (current != nullptr) {
-        Node* nextNode = current->next;
-        delete current;
-        current = nextNode;
-    }
+   clear();
 }
 
 /// Dodawanie na początek.
@@ -124,4 +119,101 @@ if (index<0) {
     current->preview->next=current->next;
     current->next->preview=current->preview;
     delete current;
+}
+///Dodawanie pod wskazany index.
+void List::pushAt(int index, int value) {
+    if (index<0) {
+        return;
+    }
+    if (index==0) {
+        PushFront(value);
+        return;
+    }
+    Node*current=head;
+    int i=0;
+
+    while (current!=nullptr && i<index) {
+        current=current->next;
+        i++;
+    }
+    if (i!=index) {
+        return;
+    }
+    if (current==nullptr) {
+        PushBack(value);
+        return;
+    }
+    Node*nextNode=new Node(value);
+
+    nextNode->next=current;
+    nextNode->preview=current->preview;
+
+    current->preview->next=nextNode;
+    current->preview=nextNode;
+}
+///Wyświetlanie listy w odwrotnej kolejności.
+
+void List::printReverse() const {
+    Node*current=tail;
+    while (current!=nullptr) {
+        cout<<current->data<<" ";
+        current=current->preview;
+    }
+    cout<<endl;
+}
+
+///Wyświetlanie następnego elementu listu.
+void List::printNext(int index) const {
+    if (index<0) {
+        return;
+    }
+    Node*current=head;
+    int i=0;
+    while (current!=nullptr && i<index) {
+        current=current->next;
+        i++;
+    }
+    if (current==nullptr) {
+        cout<<"Nie ma elementu pod tym indeksem"<<endl;
+        return;
+    }
+    if (current->next==nullptr) {
+        cout<<"Brak nastepnego elementu"<<endl;
+        return;
+    }
+    cout<<current->next->data<<endl;
+}
+
+///Służy do wyświetlania poprzedniego elementu w liście.
+void List::printBack(int index) const {
+    if (index<0) {
+        return;
+    }
+    Node*current=head;
+    int i=0;
+    while (current!=nullptr && i<index) {
+        current=current->next;
+        i++;
+    }
+    if (current==nullptr) {
+        cout<<"Nie ma elementu pod tym indeksem"<<endl;
+        return;
+    }
+    if (current->preview==nullptr) {
+        cout<<"Brak poprzedniego elementu"<<endl;
+        return;
+    }
+    cout<<current->preview->data<<endl;
+}
+
+///Czyszczenie listy.
+void List::clear() {
+    Node*current=head;
+    while (current!=nullptr ) {
+        Node* nextNode=current->next;
+        delete current;
+        current=nextNode;
+    }
+    head=nullptr;
+    tail=nullptr;
 }
