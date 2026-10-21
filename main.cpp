@@ -85,5 +85,6 @@ int main() {
     lista->clear();
     lista->printNormal();
 test 1
+    test-2
     return 0;
 }
