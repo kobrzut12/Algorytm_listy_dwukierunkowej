@@ -1,6 +1,6 @@
 #pragma once
 #include "Node.h"
-
+#include "ListIterator.h"
 /**
  *@file List.h
  * @brief Deklaracja klasy listy dwukierunkowej.
@@ -88,4 +88,16 @@ public:
  *@brief Metoda służy do czyszczenia całej listy.
  */
     void clear();
+
+    /**
+ * @brief Tworzy iterator wskazujący na pierwszy element listy.
+ * @return Iterator rozpoczynający pracę od początku listy.
+ */
+    ListIterator begin() const;
+
+    /**
+     * @brief Tworzy iterator wskazujący na ostatni element listy.
+     * @return Iterator rozpoczynający pracę od końca listy.
+     */
+    ListIterator rbegin() const;
 };

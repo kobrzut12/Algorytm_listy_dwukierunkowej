@@ -217,3 +217,15 @@ void List::clear() {
     head=nullptr;
     tail=nullptr;
 }
+
+
+/// Tworzenie iteratora od początku listy.
+ListIterator List::begin() const {
+    return ListIterator(head);
+}
+
+/// Tworzenie iteratora od końca listy.
+ListIterator List::rbegin() const {
+    return ListIterator(tail);
+}
+
