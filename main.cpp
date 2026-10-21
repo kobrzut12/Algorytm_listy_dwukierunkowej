@@ -84,6 +84,6 @@ int main() {
     cout << "Czyszczenie listy:" << endl;
     lista->clear();
     lista->printNormal();
-
+Usun usun
     return 0;
 }
