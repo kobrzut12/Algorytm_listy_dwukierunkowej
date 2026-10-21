@@ -13,7 +13,7 @@ using namespace std;
  * @class List
  * @brief Klasa zarządza listą.
  *
- *  Elementy tworzony dynamicznie oraz przechowuje wskaźniki na pierwszy i ostatni węzęł.
+ *  Elementy tworzony dynamicznie oraz przechowuje wskaźniki na pierwszy i ostatni węzeł.
  */
 
 class List {
@@ -58,4 +58,9 @@ public:
      * @brief Metoda służy do usuwania węzła z tyłu listy dwukierunkowej.
      */
     void deleteBack();
+    /**
+     * @brief Usuwa element znajdujący się pod wskazanym indeksem.
+     * @param index Indeks elementu do usunięcia, liczony od zera.
+     */
+    void deleteAt(int index);
 };

@@ -4,7 +4,7 @@
 #pragma once
 /**
  * @file Node.h
- * @brief Deklaracja klasy Node, która reprezentuje jeden węzęł listy dwukierunkowej.
+ * @brief Deklaracja klasy Node, która reprezentuje jeden węzeł listy dwukierunkowej.
  **/
 /**
  * @class Node

@@ -1,7 +1,7 @@
 
 #include "List.h"
 #include <iostream>
-
+using namespace std;
 /**
  * @file List.cpp
  * @brief Implementacja metod klasy List.
@@ -55,11 +55,11 @@ void List::printNormal() const {
     Node* current = head;
 
     while (current != nullptr) {
-        std::cout << current->data << " ";
+        cout << current->data << " ";
         current = current->next;
     }
 
-    std::cout << std::endl;
+  cout <<endl;
 }
 
 /// Usuwanie pierwszego elementu.
@@ -98,4 +98,30 @@ void List::deleteBack() {
     }
 
     delete toDelete;
+}
+
+void List::deleteAt(int index) {
+if (index<0) {
+    return;
+}
+    Node*current=head;
+    int i=0;
+    while (current!=nullptr && i<index) {
+        current=current->next;
+        i++;
+    }
+    if (current==nullptr) {
+        return;
+    }
+    if (current==head) {
+        deleteFront();
+        return;
+    }
+    if (current==tail) {
+        deleteBack();
+        return;
+    }
+    current->preview->next=current->next;
+    current->next->preview=current->preview;
+    delete current;
 }
