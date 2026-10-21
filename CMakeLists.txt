@@ -5,4 +5,5 @@ add_executable(Algorytm_listy_dwukierunkowej
         main.cpp
         List.cpp
         ListFactory.cpp
+        ListIterator.cpp
 )
