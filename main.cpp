@@ -85,5 +85,7 @@ int main() {
     lista->clear();
     lista->printNormal();
 
+
+    cout<<"dopisanie elementu z innego sklonowanego projektu i wysłanie";
     return 0;
 }
