@@ -86,6 +86,6 @@ int main() {
     lista->printNormal();
 
 
-    cout<<"dopisanie elementu z innego sklonowanego projektu i wysłanie";
+    cout<<"Tutaj dodana linia z oryginalnego klona usuwam!";
     return 0;
 }
